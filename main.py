@@ -1,16 +1,24 @@
-# This is a sample Python script.
+import json
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import jsonpath as jsonpath
+import requests
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from Extensions.ApiAction import GetMethod
+from Extensions.Verfications import VeriyStatusCode, VerifyStatus
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def test_get_veriystatusCode():
+    VeriyStatusCode(GetMethod("https://petstore.swagger.io/v2/pet/findByStatus?status=available"), 200)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def test_get_VerifyStatus():
+    VerifyStatus(GetMethod("https://petstore.swagger.io/v2/pet/findByStatus?status=available"), 'available')
+
+
+
+
+
+
+
+#r = requests.post("https://petstore.swagger.io/v2/pet", json=data)
+
+#r = requests.put("https://petstore.swagger.io/v2/pet", json=data)
