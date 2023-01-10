@@ -22,3 +22,8 @@ def test_get_VerifyStatus():
 #r = requests.post("https://petstore.swagger.io/v2/pet", json=data)
 
 #r = requests.put("https://petstore.swagger.io/v2/pet", json=data)
+
+#pytest --alluredir D:\SwaggerProject\Report main.py
+#allure serve D:\SwaggerProject\Report
+
+
