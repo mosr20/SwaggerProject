@@ -1,29 +1,26 @@
-import json
-
-import jsonpath as jsonpath
 import requests
 
 from Extensions.ApiAction import GetMethod
 from Extensions.Verfications import VeriyStatusCode, VerifyStatus
+from Base import aaa
+
+
+
 
 
 def test_get_veriystatusCode():
-    VeriyStatusCode(GetMethod("https://petstore.swagger.io/v2/pet/findByStatus?status=available"), 200)
+    VeriyStatusCode(GetMethod('https://petstore.swagger.io/v2/pet/findByStatus?status=available'), 200)
+
 
 def test_get_VerifyStatus():
     VerifyStatus(GetMethod("https://petstore.swagger.io/v2/pet/findByStatus?status=available"), 'available')
 
 
 
+r = requests.post("https://petstore.swagger.io/v2/pet", json=aaa )
+
+r = requests.put("https://petstore.swagger.io/v2/pet", json=aaa)
 
 
-
-
-#r = requests.post("https://petstore.swagger.io/v2/pet", json=data)
-
-#r = requests.put("https://petstore.swagger.io/v2/pet", json=data)
-
-#pytest --alluredir D:\SwaggerProject\Report main.py
-#allure serve D:\SwaggerProject\Report
-
-
+# pytest --alluredir D:\SwaggerProject\Report main.py
+# allure serve D:\SwaggerProject\Report
