@@ -19,10 +19,9 @@ def test_get_Verify_Content_Type():
     VerifyContent_Type(GetMethod(Set_config.send_get()), 'application/json')
 
 
-hhh = Create_object
-ggg = Create_object.build_message()
+
 def test_post_verify_statusCode():
-    VerifyStatusCode(PostMethod(Set_config.send_post(),ggg),200)
+    VerifyStatusCode(PostMethod(Set_config.send_post(),Create_object.build_message()),200)
 
 
 
