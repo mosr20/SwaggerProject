@@ -13,7 +13,8 @@ def GetMethod(path):
 
 def PostMethod(path, obj):
     try:
-        r = requests.post(path, obj)
+        fix_obj = json.loads(obj)
+        r = requests.post(path, fix_obj)
         return r
     except requests.exceptions.RequestException as e:
         print(e)
@@ -37,6 +38,7 @@ def DeleteMethod(id):
 def parsJson(r):
     parse = json.loads(r.text)
     return parse
+
 
 
 

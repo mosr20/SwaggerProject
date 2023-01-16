@@ -1,4 +1,5 @@
 
+
 class create_object:
 
     def __init__(self,id,category ,name,photoUrls ,tags,status):
@@ -13,9 +14,7 @@ class create_object:
 
 
     def build_message(self):
-        return {self.id : 100,self.category :{"id": 0,"name": "string" },self.name :"moshe",
+        return {self.id : 770,self.category :{"id": 770,"name": "string" },self.name :"moshe",
                 self.photoUrls :["string"],self.tags :[{"id": 0, "name": "string" }]
             ,self.status :"available"}
-
-
 
