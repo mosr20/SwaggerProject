@@ -1,5 +1,4 @@
 import json
-
 import requests
 
 
@@ -13,8 +12,7 @@ def GetMethod(path):
 
 def PostMethod(path, obj):
     try:
-        fix_obj = json.loads(obj)
-        r = requests.post(path, fix_obj)
+        r = requests.post(path, json=obj)
         return r
     except requests.exceptions.RequestException as e:
         print(e)
@@ -22,7 +20,7 @@ def PostMethod(path, obj):
 
 def PutMethod(path, obj):
     try:
-        r = requests.put(path, obj)
+        r = requests.put(path,obj)
         return r
     except requests.exceptions.RequestException as e:
         print(e)
