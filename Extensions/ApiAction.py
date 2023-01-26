@@ -6,6 +6,7 @@ def GetMethod(path):
     try:
         r = requests.get(path)
         return r
+
     except requests.exceptions.RequestException as e:
         print(e)
 
@@ -32,6 +33,8 @@ def DeleteMethod(id):
         return r
     except requests.exceptions.RequestException as e:
         print(e)
+
+
 
 def parsJson(r):
     parse = json.loads(r.text)
