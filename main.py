@@ -24,7 +24,7 @@ def test_post_verify_post():
 @pytest.mark.post
 def test_put_verify_statusCode():
     VerifyStatusCode(PutMethod(Set_config.send_put(),Create_object.build_message()),415)
-    Creatinglog("SwaggerProject")
+    Creatinglog("ifo","SwaggerProject")
 
 
 

@@ -1,13 +1,17 @@
 import logging
 
 
-def Creatinglog(logname):
+def Creatinglog(level , logname):
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s      %(levelname)s     %(message)s')
     handler = logging.FileHandler(logname+'.log')
     handler.setFormatter(formatter)
     logger.addHandler(handler)
-    logger.error("Rest Api error")
+    if level =='info':
+        return logger.info("Rest Api info")
+    if level =='error':
+        return logger.error("Rest Api info")
+
 
 
